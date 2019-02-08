@@ -1,34 +1,31 @@
 const mysql = require('mysql');
+
 const connection = mysql.createConnection({
   user: 'root',
   password: 'yourpassword',
-  database: 'neighborhood'
-})
-connection.connect()
+  database: 'neighborhood',
+});
+connection.connect();
 
-let getProp = (callback) => {
+const getProp = (callback) => {
   connection.query('SELECT * FROM property', (err, data) => {
-    if(err) {
+    if (err) {
       callback('THIS DID NOT WORK');
-      return;
     } else {
-      callback(null, data)
-      return;
+      callback(null, data);
     }
-  })
-}
+  });
+};
 
-let getLoc = (callback) => {
+const getLoc = (callback) => {
   connection.query('SELECT * FROM location', (err, data) => {
-    if(err) {
+    if (err) {
       callback('THIS DID NOT WORK');
-      return;
     } else {
-      callback(null, data)
-      return;
+      callback(null, data);
     }
-  })
-}
+  });
+};
 
-module.exports.getProp = getProp
-module.exports.getLoc = getLoc
+module.exports.getProp = getProp;
+module.exports.getLoc = getLoc;
