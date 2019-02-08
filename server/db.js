@@ -1,8 +1,9 @@
 const mysql = require('mysql');
+const { config } = require('../mySQLLogin')
 
 const connection = mysql.createConnection({
-  user: 'root',
-  password: 'yourpassword',
+  user: config.user,
+  password: config.password,
   database: 'neighborhood',
 });
 connection.connect();
