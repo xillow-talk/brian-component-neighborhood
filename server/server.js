@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const port = 3000;
 const bodyParser = require('body-parser');
-const {getProp, getLoc} = require('./db')
+let {getProp, getLoc} = require('./db')
 
 const serve = express.static('./public/dist')
 app.use(serve)

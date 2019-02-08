@@ -1,10 +1,10 @@
-const mysql = require('require');
+const mysql = require('mysql');
 const connection = mysql.createConnection({
   user: 'root',
   password: 'yourpassword',
   database: 'neighborhood'
 })
-connection.conect()
+connection.connect()
 
 let getProp = (callback) => {
   connection.query('SELECT * FROM property', (err, data) => {
