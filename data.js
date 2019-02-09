@@ -37,7 +37,7 @@ const run = () => {
       house_status: randomStatus(),
     };
 
-    let { address1, city, zip, price, bed_count,bath_count,pic_count, house_status } = property;
+    var { address1, city, zip, price, bed_count,bath_count,pic_count, house_status } = property;
 
     const location = {
       property_id: randomNum(1, 100),
@@ -46,7 +46,7 @@ const run = () => {
       transit_score: randomNum(50, 100),
     };
 
-    let { property_id, zip, walk_score, transit_score } = location;
+    var { property_id, zip, walk_score, transit_score } = location;
 
     pool.query(`INSERT into property(address1, city, zip, price, bed_count, bath_count, pic_count, house_status) VALUES('${address1}','${city}',${zip},${price},${bed_count},${bath_count},${pic_count},${house_status})`, (err) => {
       if (err) {
