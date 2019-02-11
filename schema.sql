@@ -1,8 +1,10 @@
 DROP DATABASE IF EXISTS neighborhood;
-
-CREATE DATABASE neighborhood;
+CREATE DATABASE IF NOT EXISTS neighborhood;
 
 USE neighborhood;
+
+DROP TABLE IF EXISTS zip;
+DROP TABLE IF EXISTS property;
 
 CREATE TABLE zip (
   id INT AUTO_INCREMENT,

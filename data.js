@@ -9,13 +9,9 @@ const pool = mysql.createPool({
   database: 'neighborhood',
 });
 
-const randomNum = (min, max) => {
-  return Math.ceil(Math.random() * (max - min) + min);
-};
+const randomNum = (min, max) => Math.floor(Math.random() * (max - min) + min);
 
-const random = (num) => {
-  return Math.ceil(Math.random() * num);
-};
+const random = num => Math.ceil(Math.random() * num);
 
 const randomStatus = () => {
   if (Math.random() > 0.50) {
@@ -29,13 +25,19 @@ const randomZip = () => {
   }
   return 2;
 };
+const zipNum = (num) => {
+  if (num === 0) {
+    return 94595;
+  }
+  return 94596;
+};
 
 const run = () => {
   for (let j = 0; j < 2; j++) {
     const zip = {
-      code: randomNum(94595, 94596),
-      walk_score: randomNum(50, 10),
-      transit_score: randomNum(50, 100),
+      code: zipNum(j),
+      walk_score: randomNum(50, 101),
+      transit_score: randomNum(50, 101),
     };
     let { code, walk_score, transit_score } = zip;
     pool.query(`INSERT into zip(code, walk_score, transit_score) VALUES(${code},${walk_score},${transit_score})`, (err) => {
@@ -58,9 +60,9 @@ const run = () => {
       pic_count: random(30),
       house_status: randomStatus(),
     };
-    let { address1, city, zip_id, price, bed_count,bath_count,pic_count, house_status } = property;
+    let { address1, city, zip_id, price, bed_count,bath_count, pic_count, house_status } = property;
 
-    pool.query(`INSERT into property(address1, city, zip_id, price, bed_count, bath_count, pic_count, house_status) VALUES('${address1}','${city}',${zip_id}, ${price},${bed_count},${bath_count},${pic_count},${house_status})`, (err) => {
+    pool.query(`INSERT into property(address1, city, zip_id, price, bed_count, bath_count, pic_count, house_status) VALUES("${address1}","${city}",${zip_id}, ${price},${bed_count},${bath_count},${pic_count},${house_status})`, (err) => {
       if (err) {
         console.log(err);
       } else {
