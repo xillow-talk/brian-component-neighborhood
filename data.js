@@ -4,7 +4,7 @@ const { config } = require('./mySQLLogin.js');
 
 const pool = mysql.createPool({
   connectionLimit: 10,
-  user: 'root',
+  user: config.user,
   password: config.password,
   database: 'neighborhood',
 });
