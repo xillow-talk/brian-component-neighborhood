@@ -1,3 +1,5 @@
 node_modules
 mySQLLogin.js
 .eslintrc.js
+.vscode
+package-lock.json
