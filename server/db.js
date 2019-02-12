@@ -1,5 +1,5 @@
 const mysql = require('mysql');
-const { config } = require('../mySQLLogin')
+const { config } = require('../mySQLLogin');
 
 const connection = mysql.createConnection({
   user: config.user,
@@ -8,8 +8,8 @@ const connection = mysql.createConnection({
 });
 connection.connect();
 
-const getProp = (callback) => {
-  connection.query('SELECT * FROM property', (err, data) => {
+const getProp = (info, callback) => {
+  connection.query(`SELECT * FROM property WHERE id = ${info}`, (err, data) => {
     if (err) {
       callback('THIS DID NOT WORK');
     } else {
@@ -18,8 +18,8 @@ const getProp = (callback) => {
   });
 };
 
-const getLoc = (callback) => {
-  connection.query('SELECT * FROM location', (err, data) => {
+const getLoc = (info, callback) => {
+  connection.query(`SELECT * FROM zip WHERE id = ${info}`, (err, data) => {
     if (err) {
       callback('THIS DID NOT WORK');
     } else {

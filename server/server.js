@@ -10,8 +10,9 @@ app.use(serve);
 
 app.use(bodyParser.json());
 
-app.get('/property', (req, res) => {
-  getProp((err, data) => {
+app.get('/property/:propertyid', (req, res) => {
+  const propId = req.params.propertyid;
+  getProp(propId, (err, data) => {
     if (err) {
       res.sendStatus(404);
     } else {
@@ -20,8 +21,9 @@ app.get('/property', (req, res) => {
   });
 });
 
-app.get('/location', (req, res) => {
-  getLoc((err, data) => {
+app.get('/location/:locationid', (req, res) => {
+  const locInfo = req.params.locationid;
+  getLoc(locInfo, (err, data) => {
     if (err) {
       res.sendStatus(404);
     } else {

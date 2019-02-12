@@ -9,60 +9,67 @@ const pool = mysql.createPool({
   database: 'neighborhood',
 });
 
+const randomNum = (min, max) => Math.floor(Math.random() * (max - min) + min);
+
+const random = num => Math.ceil(Math.random() * num);
+
+const randomStatus = () => {
+  if (Math.random() > 0.50) {
+    return 0;
+  }
+  return 1;
+};
+const randomZip = () => {
+  if (Math.random() > 0.50) {
+    return 1;
+  }
+  return 2;
+};
+const zipNum = (num) => {
+  if (num === 0) {
+    return 94595;
+  }
+  return 94596;
+};
+
 const run = () => {
-  for (let i = 0; i < 100; i++) {
-    const randomNum = (min, max) => {
-      return Math.ceil(Math.random() * (max - min) + min);
+  for (let j = 0; j < 2; j++) {
+    const zip = {
+      code: zipNum(j),
+      walk_score: randomNum(50, 101),
+      transit_score: randomNum(50, 101),
     };
-
-    const random = (num) => {
-      return Math.ceil(Math.random() * num);
-    };
-
-    const randomStatus = () => {
-      if (Math.random() > 0.50) {
-        return 0;
+    let { code, walk_score, transit_score } = zip;
+    pool.query(`INSERT into zip(code, walk_score, transit_score) VALUES(${code},${walk_score},${transit_score})`, (err) => {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log('YAY THE LOCATIONS ARE IN THE DB')
       }
-      return 1;
-    };
-
+    });
+  };
+  
+  for (let i = 0; i < 100; i++) {
     const property = {
       address1: faker.address.streetAddress(),
       city: faker.address.city(),
-      zip: randomNum(94500, 94600),
+      zip_id: randomZip(),
       price: randomNum(600000, 1500000),
       bed_count: random(7),
       bath_count: random(4),
       pic_count: random(30),
       house_status: randomStatus(),
     };
+    let { address1, city, zip_id, price, bed_count,bath_count, pic_count, house_status } = property;
 
-    var { address1, city, zip, price, bed_count,bath_count,pic_count, house_status } = property;
-
-    const location = {
-      property_id: randomNum(1, 100),
-      zip: randomNum(94500, 94600),
-      walk_score: randomNum(50, 10),
-      transit_score: randomNum(50, 100),
-    };
-
-    var { property_id, zip, walk_score, transit_score } = location;
-
-    pool.query(`INSERT into property(address1, city, zip, price, bed_count, bath_count, pic_count, house_status) VALUES('${address1}','${city}',${zip},${price},${bed_count},${bath_count},${pic_count},${house_status})`, (err) => {
+    pool.query(`INSERT into property(address1, city, zip_id, price, bed_count, bath_count, pic_count, house_status) VALUES("${address1}","${city}",${zip_id}, ${price},${bed_count},${bath_count},${pic_count},${house_status})`, (err) => {
       if (err) {
         console.log(err);
       } else {
         console.log('YAY PROPERTY ARE IN THE DB');
       }
     });
-
-    pool.query(`INSERT into location(property_id, zip, walk_score, transit_score) VALUES(${property_id},${zip},${walk_score},${transit_score})`, (err) => {
-      if (err) {
-        console.log(err);
-      } else {
-        console.log('YAY THE LOCATIONS ARE IN THE DB');
-      }
-    });
   }
 };
 run();
+
