@@ -22,5 +22,5 @@ max-height: ${props => (props.open ? "50%" : "0%")};
 padding: ${props => (props.open ? "10px" : "0px")};
 div {
     margin: 0px;
-  }
+  };
 `
