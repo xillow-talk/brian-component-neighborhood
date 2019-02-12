@@ -1,16 +1,31 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import styled from 'styled-components';
+import { Heading, Content} from '../style.js';
 
 class App extends React.Component {
   constructor() {
     super()
+    this.state = {};
   }
+
+  toggleOpen() {
+    this.setState({ open: !this.state.open})
+  }
+
   render(){
-    return(
-      <div>
-        <h1>this is working</h1>
-        <img src="property1.jpg"></img>
+  return(
+    <div>
+    <Heading onClick={this.toggleOpen.bind(this)}>Neighborhood</Heading>
+    <Content open={this.state.open}>
+      <div className="collapsible-content">
+        <div>zestimate</div>
+        <div>paragraph</div>
+        <div>google maps</div>
+        <div>photo carasel</div>
       </div>
+    </Content>
+    
+    </div>
     )
   }
 }
