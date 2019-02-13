@@ -4,3 +4,6 @@ mySQLLogin.js
 .vscode
 package-lock.json
 .DS_Store
+
+# IGNORE file named `bundle.js`
+public/dist/bundle.js
