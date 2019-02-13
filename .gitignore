@@ -7,3 +7,5 @@ package-lock.json
 
 # IGNORE file named `bundle.js`
 public/dist/bundle.js
+
+bundle.js
