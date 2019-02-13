@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Google_Maps = () => (
-  <div>
+const GoogleMaps = () => (
+  <div className="googlemaps">
    <img src="https://s3-us-west-1.amazonaws.com/xillowpropertyphotos/location1.png"></img>
   </div>
 );
 
-export default Google_Maps;
+export default GoogleMaps;

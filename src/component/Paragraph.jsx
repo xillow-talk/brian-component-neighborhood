@@ -1,7 +1,7 @@
 import React from 'react';
 
-const Paragraph = () => (
-  <div>
+const Paragraph = ({ zip }) => (
+  <div className="paragraph">
     <div className="predicts">
       <p>Zillow predicts <a href="">Golden Gate Heights home values</a> will rise 6.8% next year, compared to a 6.1% increase for San Francisco as a whole. Among Golden Gate Heights homes, this home is 55.2% more expensive than the midpoint (median) home, and is priced 18.3% more per square foot.</p>
     </div>
@@ -13,7 +13,7 @@ const Paragraph = () => (
                 walkscore 
           </span>
           <strong>
-           71 (walkable)
+           {zip.walk_score} (walkable)
           </strong>
         </li>
         <li>
@@ -21,7 +21,7 @@ const Paragraph = () => (
               <div className="bus"></div>
                 transit score
             <strong>
-              75(Excellent Transit)
+              {zip.transit_score}(Excellent Transit)
             </strong>
           </span>
         </li>

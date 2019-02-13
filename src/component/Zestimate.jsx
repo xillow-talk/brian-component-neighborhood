@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Zestimate = () => (
+const Zestimate = ({ property }) => (
   <div className="homevalue">
     <div className="content">
       <div className="price">
@@ -8,7 +8,7 @@ const Zestimate = () => (
           <span>Median Zestimate</span>
           <a>**button**</a>
         </h4>
-        <h2>$1,374,800</h2>
+        <h2>${property.price}</h2>
       </div>
       <div className="percentage">
         <div>*Arrow*</div>
