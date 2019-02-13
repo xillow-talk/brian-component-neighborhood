@@ -19,11 +19,12 @@ CREATE TABLE property (
   address1 VARCHAR(64),
   city VARCHAR(64),
   zip_id INT,
-  price INT,
+  price VARCHAR(32),
   bed_count INT,
   bath_count INT,
   pic_count INT,
   house_status BOOLEAN default 0,
+  sqft VARCHAR(32),
   PRIMARY KEY (id),
   FOREIGN KEY (zip_id) REFERENCES zip(id)
 );
