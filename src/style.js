@@ -6,7 +6,7 @@ export const Center = styled.div`
   margin-left: auto;
   max-width: 1024px;
   padding-left: 20px;
-  padding-right: 340px;
+  padding-right: 20px;
 `
 
 export const Heading = styled.div`
