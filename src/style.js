@@ -43,9 +43,10 @@ export const Container = styled.div`
   border: 1px solid blue;
 `
 export const Slides = styled.div`
-  border-color: red;
+  border: 1px solid red;
   flex: 1 1 0%;
   display: flex;
+  max-width: 900px;
 `
 export const Photo = styled.div`
   display:inline-block;
@@ -57,8 +58,8 @@ export const Photo = styled.div`
 
 `
 export const Img = styled.img`
-  max-width: 473px;
-  max-height: 258;
+  max-width: 100%;
+  height: auto;
 `
 
 // INFO FOR EACH HOME
