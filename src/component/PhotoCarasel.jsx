@@ -22,9 +22,7 @@ class PhotoCarasel extends React.Component {
       .then(res => {
         this.setState({property: res.data})
         this.setState({photo1: res.data[0]})
-        console.log(this.state.photo1)
         this.setState({photo2: res.data[1]})
-        console.log(this.state.photo2)
       })
       .catch(err => {
         console.log(err)
@@ -40,7 +38,7 @@ class PhotoCarasel extends React.Component {
       this.setState({photo1: this.state.property[this.state.counter - 1]})
       this.setState({photo2: this.state.property[this.state.counter]})
     } else if (this.state.counter === 1) {
-      
+
     }
  
   };
@@ -58,11 +56,11 @@ class PhotoCarasel extends React.Component {
       <h4 style={{fontSize:'13px', fontWeight: '700', textTransform:'uppercase', color: '#444'}}>Nearby Homes</h4>
         <Container className="photocontainer">
           <span onClick={this.backButton} className="backbutton">
-            <i className='fas' style={{fontSize:'40px', color:'#444',margin:'100px 0px 0px 0px'}}>&#xf104;</i>
+            <i className='fas' style={{fontSize:'40px', color:'#444',margin:'100px 0px 0px 0px',cursor: 'pointer'}}>&#xf104;</i>
           </span>
             <Homes property={this.props.property} zip={this.props.zip}/>
           <span onClick={this.forwardButton} className="forwardbutton">
-            <i style='font-size:24px' className='fas'style={{fontSize:'40px', color:'#444',margin:'100px 0px 0px 0px'}}>&#xf105;</i>
+            <i style='font-size:24px' className='fas'style={{fontSize:'40px', color:'#444',margin:'100px 0px 0px 0px',cursor: 'pointer'}}>&#xf105;</i>
           </span>
         </Container>
     </div>
