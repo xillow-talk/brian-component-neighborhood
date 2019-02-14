@@ -5,7 +5,7 @@ import Google_Maps from './GoogleMaps.jsx';
 import PhotoCarasel from './PhotoCarasel.jsx';
 import faker from 'faker'
 import axios from 'axios';
-import { Heading, Content } from '../style.js';
+import { Center, Heading, Content } from '../style.js';
 
 class App extends React.Component {
   constructor() {
@@ -52,7 +52,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <Center>
         <Heading onClick={this.toggleOpen.bind(this)}>Neighborhood</Heading>
         <Content open={this.state.open}>
           <div className="collapsible-content">
@@ -62,7 +62,7 @@ class App extends React.Component {
             <PhotoCarasel property={this.state.property} zip={this.state.zip}/>
           </div>
         </Content>
-      </div>
+      </Center>
     );
   }
 }

@@ -16,9 +16,9 @@ class Home extends React.Component {
        <Img onClick={this.newHouse.bind(this)} src="https://s3-us-west-1.amazonaws.com/xillowpropertyphotos/property3.jpg">
        </Img>
          <Photos>{this.props.property.pic_count}&nbsp;photos</Photos>
-         <Heart><i class='material-icons' style={{fontSize:'57px',color:'black',position:'absolute', opacity: '0.5', top:'-3px',right:'-4px'}}>&#xe87d;</i><i class='material-icons' style={{fontSize:'50px',color:'white',position:'relative'}}>&#xe87e;</i></Heart>
+         <Heart><i className='material-icons' style={{fontSize:'57px',color:'black',position:'absolute', opacity: '0.5', top:'-3px',right:'-4px'}}>&#xe87d;</i><i className='material-icons' style={{fontSize:'50px',color:'white',position:'relative'}}>&#xe87e;</i></Heart>
           <h4>
-            <Status><i class="material-icons" style={{position:'absolute', color:'white', fontSize: '30px'}}>&#xe3a6;</i><i class="material-icons" style={{position:'relative', color:'grey', left: '3px', top:'3px'}}>&#xe3a6;</i></Status>
+            <Status><i className="material-icons" style={{position:'absolute', color:'white', fontSize: '30px'}}>&#xe3a6;</i><i className="material-icons" style={{position:'relative', color:'grey', left: '3px', top:'3px'}}>&#xe3a6;</i></Status>
             <Market>{this.props.property.house_status === 0 ? "SOLD" : "OFF MARKET"}</Market>
           </h4>
           <p>

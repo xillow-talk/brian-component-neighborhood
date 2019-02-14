@@ -1,5 +1,14 @@
 import styled from 'styled-components';
 
+
+export const Center = styled.div`
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 1024px;
+  padding-left: 20px;
+  padding-right: 340px;
+`
+
 export const Heading = styled.div`
   font-family:'Gotham,gotham','Verdana','sans-serif';
   font-size: 28px;
@@ -48,7 +57,8 @@ export const Photo = styled.div`
 
 `
 export const Img = styled.img`
-  max-width: 400px;
+  max-width: 473px;
+  max-height: 258;
 `
 
 // INFO FOR EACH HOME
@@ -135,7 +145,7 @@ export const Vh2 = styled.h2`
 export const Arrow = styled.i`
   font-size: 32px;
   color: #9ACD32;
-  /* color: #9ACD32; */
+  margin: 5px 0px 0px 0px 
 `
 
 export const Perh5 = styled.h5`

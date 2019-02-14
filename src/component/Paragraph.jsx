@@ -4,7 +4,7 @@ import { Icon, WTScore, Score } from '../style'
 const Paragraph = ({ zip }) => (
   <div className="paragraph">
     <div className="predicts">
-      <p style={{color: '#444'}}>Zillow predicts <a href="">Golden Gate Heights home values</a> will rise 6.8% next year, compared to a 6.1% increase for San Francisco as a whole. Among Golden Gate Heights homes, this home is 55.2% more expensive than the midpoint (median) home, and is priced 18.3% more per square foot.</p>
+      <p style={{color: '#444', lineHeight:'1.5'}}>Zillow predicts <a href="">Golden Gate Heights home values</a> will rise 6.8% next year, compared to a 6.1% increase for San Francisco as a whole. Among Golden Gate Heights homes, this home is 55.2% more expensive than the midpoint (median) home, and is priced 18.3% more per square foot.</p>
     </div>
     <div className="content-component">
       <div style={{display: 'flex', margin: '20px 0px 30px 0px'}}>
