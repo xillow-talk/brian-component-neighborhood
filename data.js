@@ -50,19 +50,26 @@ const run = () => {
   };
   
   for (let i = 0; i < 100; i++) {
+    const randomPriceNum = randomNum(600000, 2000000);
+    const priceNum = randomPriceNum.toLocaleString()
+
+    const randomSfNum = randomNum(2000, 6000);
+    const sFNum = randomSfNum.toLocaleString()
+
     const property = {
       address1: faker.address.streetAddress(),
       city: faker.address.city(),
       zip_id: randomZip(),
-      price: randomNum(600000, 1500000),
+      price: priceNum,
       bed_count: random(7),
       bath_count: random(4),
       pic_count: random(30),
       house_status: randomStatus(),
+      sqft: sFNum,
     };
-    let { address1, city, zip_id, price, bed_count,bath_count, pic_count, house_status } = property;
+    let { address1, city, zip_id, price, bed_count,bath_count, pic_count, house_status, sqft } = property;
 
-    pool.query(`INSERT into property(address1, city, zip_id, price, bed_count, bath_count, pic_count, house_status) VALUES("${address1}","${city}",${zip_id}, ${price},${bed_count},${bath_count},${pic_count},${house_status})`, (err) => {
+    pool.query(`INSERT into property(address1, city, zip_id, price, bed_count, bath_count, pic_count, house_status, sqft) VALUES("${address1}","${city}",${zip_id}, "${price}",${bed_count},${bath_count},${pic_count},${house_status}, "${sqft}")`, (err) => {
       if (err) {
         console.log(err);
       } else {

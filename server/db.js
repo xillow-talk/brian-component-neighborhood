@@ -18,6 +18,16 @@ const getProp = (info, callback) => {
   });
 };
 
+const getAllProp = (callback) => {
+  connection.query('SELECT * FROM property WHERE id < 15', (err, data) => {
+    if (err) {
+      callback('THIS DID NOT WORK');
+    } else {
+      callback(null, data);
+    }
+  });
+};
+
 const getLoc = (info, callback) => {
   connection.query(`SELECT * FROM zip WHERE id = ${info}`, (err, data) => {
     if (err) {
@@ -29,4 +39,5 @@ const getLoc = (info, callback) => {
 };
 
 module.exports.getProp = getProp;
+module.exports.getAllProp = getAllProp;
 module.exports.getLoc = getLoc;
