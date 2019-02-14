@@ -19,7 +19,7 @@ const getProp = (info, callback) => {
 };
 
 const getAllProp = (callback) => {
-  connection.query('SELECT * FROM property', (err, data) => {
+  connection.query('SELECT * FROM property WHERE id < 15', (err, data) => {
     if (err) {
       callback('THIS DID NOT WORK');
     } else {
