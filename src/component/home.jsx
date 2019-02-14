@@ -1,6 +1,10 @@
 import React from 'react';
 import { Photo, Img, Photos, Heart, Status, Market, Price, BB, Addy} from '../style'
 
+
+{/* <Img onClick={this.newHouse.bind(this)} src={`https://s3-us-west-1.amazonaws.com/xillowpropertyphotos/property${this.props.property.id}.jpg`}>
+       </Img> */}
+
 class Home extends React.Component {
   constructor(props) {
     super(props)
@@ -13,7 +17,7 @@ class Home extends React.Component {
   render(){
     return (
       <Photo className="photo1"> 
-       <Img onClick={this.newHouse.bind(this)} src={`https://s3-us-west-1.amazonaws.com/xillowpropertyphotos/property${this.props.property.id}.jpg`}>
+       <Img onClick={this.newHouse.bind(this)} src={'property1.jpg'}>
        </Img>
          <Photos>{this.props.property.pic_count}&nbsp;photos</Photos>
          <Heart><i className='material-icons' style={{fontSize:'57px',color:'black',position:'absolute', opacity: '0.5', top:'-3px',right:'-4px'}}>&#xe87d;</i><i className='material-icons' style={{fontSize:'50px',color:'white',position:'relative'}}>&#xe87e;</i></Heart>

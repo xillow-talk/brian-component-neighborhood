@@ -12,8 +12,8 @@ class Homes extends React.Component {
     return (
       <div>
       <Slides className="singleContainer1">
-        <Home property={this.props.property} zip={this.props.zip}/>
-        <Home property={this.props.property} zip={this.props.zip}/>
+        <Home property={this.props.property1} zip={this.props.zip}/>
+        <Home property={this.props.property2} zip={this.props.zip}/>
       </Slides>
       </div>
     )

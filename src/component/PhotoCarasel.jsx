@@ -9,8 +9,8 @@ class PhotoCarasel extends React.Component {
     super(props)
     this.state = {
       property: [],
-      photo1: null,
-      photo2: null,
+      photo1: [],
+      photo2: [],
       counter: 1
     }
     this.backButton = this.backButton.bind(this);
@@ -58,7 +58,7 @@ class PhotoCarasel extends React.Component {
           <span onClick={this.backButton} className="backbutton">
             <i className='fas' style={{fontSize:'40px', color:'#444',margin:'100px 0px 0px 0px',cursor: 'pointer'}}>&#xf104;</i>
           </span>
-            <Homes property={this.props.property} zip={this.props.zip}/>
+            <Homes property1={this.state.photo1} property2={this.state.photo2} zip={this.props.zip}/>
           <span onClick={this.forwardButton} className="forwardbutton">
             <i style='font-size:24px' className='fas'style={{fontSize:'40px', color:'#444',margin:'100px 0px 0px 0px',cursor: 'pointer'}}>&#xf105;</i>
           </span>
