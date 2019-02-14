@@ -10,7 +10,7 @@ class PhotoCarasel extends React.Component {
   render(){
     return (
     <div className="photos">
-      <h4>Nearby Homes</h4>
+      <h4 style={{fontSize:'13px', fontWeight: '700', textTransform:'uppercase', color: '#444'}}>Nearby Homes</h4>
         <Container className="photocontainer">
           <span className="backbutton">
             back

@@ -1,6 +1,6 @@
 import React from 'react';
 import Home from  './Home.jsx'
-import { PhotoCard } from '../style'
+import { Slides } from '../style'
 
 
 
@@ -11,12 +11,10 @@ class Homes extends React.Component {
   render() {
     return (
       <div>
-      <PhotoCard className="singleContainer1">
+      <Slides className="singleContainer1">
         <Home property={this.props.property} zip={this.props.zip}/>
-      </PhotoCard>
-      <PhotoCard className="singleContainer2">
         <Home property={this.props.property} zip={this.props.zip}/>
-      </PhotoCard>
+      </Slides>
       </div>
     )
   }

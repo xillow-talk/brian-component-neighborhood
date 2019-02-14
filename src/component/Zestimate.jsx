@@ -1,22 +1,23 @@
 import React from 'react';
+import { H4, Q, Vh2, Arrow, Perh5, Timep, PerDiv} from  '../style'
 
 const Zestimate = ({ property }) => (
   <div className="homevalue">
     <div className="content">
       <div className="price">
-        <h4 className="zestimate">
+        <H4 className="zestimate">
           <span>Median Zestimate</span>
-          <a>**button**</a>
-        </h4>
-        <h2>${property.price}</h2>
+          <Q className='fas'>&#xf059;</Q>
+        </H4>
+        <Vh2>${property.price}</Vh2>
       </div>
-      <div className="percentage">
-        <div>*Arrow*</div>
+      <PerDiv className="percentage">
+      <Arrow className="fa fa-arrow-circle-up"></Arrow>
         <div className="perc/time">
-          <h5>6.1 %</h5>
-          <p>Past 12 months</p>
+          <Perh5>6.1 %</Perh5>
+          <Timep>Past 12 months</Timep>
         </div>
-      </div>
+      </PerDiv>
     </div>
   </div>
 );
